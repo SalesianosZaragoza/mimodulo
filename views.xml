@@ -20,15 +20,21 @@
 	<record id="action_ventas_tree" model="ir.actions.act_window">
 		<field name="name">Ventas</field>
 		<field name="res_model">ventas_cole.ventas</field>
-		<field name="view_type">tree</field>
 		<field name="view_mode">tree,form</field>
 	</record>
+	<!-- add action ventas form -->
+	<record id="action_ventas_form" model="ir.actions.act_window">
+		<field name="name">Ventas</field>
+		<field name="res_model">ventas_cole.ventas</field>
+		<field name="view_mode">form</field>
+	</record>
+
 
 
 	<!-- add ventas form -->
 	<record id="view_ventas_form" model="ir.ui.view">
 		<field name="name">ventas.form</field>
-		<field name="model">ventas</field>
+		<field name="model">ventas_cole.ventas</field>
 		<field name="arch" type="xml">
 			<form>
 				<sheet>
