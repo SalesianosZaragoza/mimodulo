@@ -4,19 +4,27 @@
 	<!-- add ventas model -->
 	<record id="view_ventas_tree" model="ir.ui.view">
 		<field name="name">ventas.tree</field>
-		<field name="model">ventas</field>
+		<field name="model">ventas_cole.ventas</field>
 		<field name="arch" type="xml">
 			<tree>
 				<field name="name"/>
 				<field name="fecha"/>
 				<field name="cliente"/>
-				<field name="producto"/>
 				<field name="cantidad"/>
 				<field name="precio"/>
 				<field name="total"/>
 			</tree>
 		</field>
 	</record>
+	<!-- add action ventas tree -->
+	<record id="action_ventas_tree" model="ir.actions.act_window">
+		<field name="name">Ventas</field>
+		<field name="res_model">ventas_cole.ventas</field>
+		<field name="view_type">tree</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
 	<!-- add ventas form -->
 	<record id="view_ventas_form" model="ir.ui.view">
 		<field name="name">ventas.form</field>
@@ -28,7 +36,6 @@
 						<field name="name"/>
 						<field name="fecha"/>
 						<field name="cliente"/>
-						<field name="producto"/>
 						<field name="cantidad"/>
 						<field name="precio"/>
 						<field name="total"/>
@@ -37,5 +44,8 @@
 			</form>
 		</field>
 	</record>
-
+<!-- menu-->
+	<menuitem id="menu_ventas" name="Ventas"/>
+	<menuitem id="menu_ventas_tree" name="Ventas" parent="menu_ventas" action="action_ventas_tree"/>
+	<menuitem id="menu_ventas_form" name="Ventas" parent="menu_ventas" action="action_ventas_form"/>
 </odoo>

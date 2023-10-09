@@ -1,8 +1,8 @@
 from odoo import models, fields, api
 
 class ventas(models.Model):
-	_name = 'ventas_cole.ventas'
-	_description = 'ventas_cole.ventas'
+    _name = 'ventas_cole.ventas'
+    _description = 'ventas_cole.ventas'
     name = fields.Char()
     descripcion = fields.Char()
     precio = fields.Integer()
