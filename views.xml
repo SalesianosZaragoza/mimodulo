@@ -67,6 +67,16 @@
 			</form>
 		</field>
 	</record>
+	<!-- add search dni field -->
+	<record id="view_vendedores_search" model="ir.ui.view">
+		<field name="name">vendedores.search</field>
+		<field name="model">ventas_cole.vendedores</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="dni"/>
+			</search>
+		</field>
+	</record>
 	<!-- add vendedores list-->
 	<record id="view_vendedores_tree" model="ir.ui.view">
 		<field name="name">vendedores.tree</field>
