@@ -50,8 +50,46 @@
 			</form>
 		</field>
 	</record>
+	<!-- add vendedores form -->
+	<record id="view_vendedores_form" model="ir.ui.view">
+		<field name="name">vendedores.form</field>
+		<field name="model">ventas_cole.vendedores</field>
+		<field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<field name="nombre"/>
+						<field name="apellido"/>
+						<field name="dni"/>
+						<field name="ventas"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<!-- add vendedores list-->
+	<record id="view_vendedores_tree" model="ir.ui.view">
+		<field name="name">vendedores.tree</field>
+		<field name="model">ventas_cole.vendedores</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="nombre"/>
+				<field name="apellido"/>
+				<field name="dni"/>
+				<field name="ventas"/>
+			</tree>
+		</field>
+	</record>
+	<!-- add vendedores action tree-->
+	<record id="action_vendedores_tree" model="ir.actions.act_window">
+		<field name="name">Vendedores</field>
+		<field name="res_model">ventas_cole.vendedores</field>
+		<field name="view_mode">tree,form</field>
+	</record>
 <!-- menu-->
 	<menuitem id="menu_ventas" name="Ventas"/>
 	<menuitem id="menu_ventas_tree" name="Ventas" parent="menu_ventas" action="action_ventas_tree"/>
 	<menuitem id="menu_ventas_form" name="Ventas" parent="menu_ventas" action="action_ventas_form"/>
+	<!-- menu vendedores-->
+	<menuitem id="menu_vendedores_tree" name="Vendedores" parent="menu_ventas" action="action_vendedores_tree"/>
 </odoo>

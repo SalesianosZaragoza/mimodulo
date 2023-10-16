@@ -17,8 +17,8 @@ class ventas(models.Model):
 class vendedores(models.Model):
     _name = 'ventas_cole.vendedores'
     _description = 'ventas_cole.vendedores'
-
-    name = fields.Char()
+    _rec_name = 'nombre' # Para que se muestre el nombre en lugar del id
+    nombre = fields.Char()
     apellido = fields.Char()
     dni = fields.Char()
     ventas = fields.One2many(comodel_name='ventas_cole.ventas', inverse_name='vendedor')
